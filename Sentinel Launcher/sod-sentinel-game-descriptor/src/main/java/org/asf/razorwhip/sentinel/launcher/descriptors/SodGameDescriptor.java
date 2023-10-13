@@ -438,8 +438,6 @@ public class SodGameDescriptor implements IGameDescriptor {
 				InputStream strm = new URL("http://localhost:5326/sentineltest/sod/testrunning").openStream();
 				byte[] data = strm.readAllBytes();
 				strm.close();
-				if (!new String(data, "UTF-8").equalsIgnoreCase("assetserver-sentinel-sod-" + ASSET_SERVER_VERSION))
-					throw new IOException();
 			} catch (Exception e2) {
 				errorCallback.accept("Port 5326 is in use and not in use by a compatible Sentinel asset archive!");
 				return;
